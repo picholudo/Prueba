@@ -1,0 +1,24 @@
+{
+  "App": {
+    "puntosCorte": {
+      "home": {
+        "title": "Puntos Cortes",
+        "createLabel": "Crear nuevo Puntos Corte",
+        "createOrEditLabel": "Crear o editar Puntos Corte",
+        "notFound": "Ningún Puntos Cortes encontrado"
+      },
+      "created": "Un nuevo Puntos Corte ha sido creado con el identificador {{ param }}",
+      "updated": "Un Puntos Corte ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Puntos Corte ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Puntos Corte {{ id }}?"
+      },
+      "detail": {
+        "title": "Puntos Corte"
+      },
+      "nombre": "Nombre",
+      "limite": "Limite",
+      "superarlo": "Superarlo"
+    }
+  }
+}

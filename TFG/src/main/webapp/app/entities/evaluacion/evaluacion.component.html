@@ -1,0 +1,63 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="App.evaluacion.home.title">Evaluacions</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-evaluacion" [routerLink]="['/evaluacion/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="App.evaluacion.home.createLabel">
+            Create a new Evaluacion
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="evaluacions?.length === 0">
+        <span jhiTranslate="App.evaluacion.home.notFound">No evaluacions found</span>
+    </div>
+    <div class="table-responsive" *ngIf="evaluacions?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="App.evaluacion.fecha">Fecha</span></th>
+            <th scope="col" ><span jhiTranslate="App.evaluacion.valoracion">Valoracion</span></th>
+            <th scope="col" ><span jhiTranslate="App.evaluacion.paciente">Paciente</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let evaluacion of evaluacions ;trackBy: trackId">
+                <td><a [routerLink]="['/evaluacion', evaluacion.id, 'view' ]">{{evaluacion.id}}</a></td>
+                <td>{{evaluacion.fecha | date:'mediumDate'}}</td>
+                <td jhiTranslate="{{'App.Sospecha.' + evaluacion.valoracion}}">{{evaluacion.valoracion}}</td>
+                <td>
+                    <div *ngIf="evaluacion.pacienteId">
+                        <a [routerLink]="['/paciente', evaluacion.pacienteId , 'view' ]" >{{evaluacion.pacienteId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/evaluacion', evaluacion.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/evaluacion', evaluacion.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(evaluacion)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

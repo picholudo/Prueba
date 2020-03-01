@@ -1,0 +1,11 @@
+id;fecha;valoracion;paciente_id
+1;2020-02-28;Alzheimer;1
+2;2020-02-27;Deterioro_cognitivo_leve_sin_depresion;2
+3;2020-02-28;Alzheimer;3
+4;2020-02-27;Alzheimer;4
+5;2020-02-27;Deterioro_cognitivo_leve_con_depresion;5
+6;2020-02-28;Alzheimer;6
+7;2020-02-28;Deterioro_cognitivo_leve_con_depresion;7
+8;2020-02-28;Depresion;8
+9;2020-02-28;Deterioro_cognitivo_leve_sin_depresion;9
+10;2020-02-28;Alzheimer;10

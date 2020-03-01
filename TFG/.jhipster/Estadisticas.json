@@ -1,0 +1,72 @@
+{
+    "name": "Estadisticas",
+    "fields": [
+        {
+            "fieldName": "edad",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 60,
+            "fieldValidateRulesMax": 120
+        },
+        {
+            "fieldName": "estudios",
+            "fieldType": "Nivelestudio",
+            "fieldValues": "ILETRADO,LEER_Y_ESCRIBIR,LEER_Y_ESCRIBIR_Y_4_REGLAS,PRIMARIOS,SECUNDARIOS,SUPERIORES",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "sexo",
+            "fieldType": "Sexo",
+            "fieldValues": "Hombre,Mujer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "prueba",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "media",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "desviacion",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "zScore",
+            "otherEntityRelationshipName": "estadisticas",
+            "relationshipValidateRules": "required",
+            "relationshipName": "zscore",
+            "otherEntityField": "nombre"
+        }
+    ],
+    "changelogDate": "20200228181504",
+    "entityTableName": "estadisticas",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

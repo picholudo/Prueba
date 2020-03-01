@@ -1,0 +1,11 @@
+{
+  "App": {
+    "Sospecha": {
+      "null": "",
+      "Depresion": "Depresion",
+      "Deterioro_cognitivo_leve_con_depresion": "Deterioro_cognitivo_leve_con_depresion",
+      "Deterioro_cognitivo_leve_sin_depresion": "Deterioro_cognitivo_leve_sin_depresion",
+      "Alzheimer": "Alzheimer"
+    }
+  }
+}

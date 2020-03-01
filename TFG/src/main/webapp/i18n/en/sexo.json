@@ -1,0 +1,9 @@
+{
+  "App": {
+    "Sexo": {
+      "null": "",
+      "Hombre": "Hombre",
+      "Mujer": "Mujer"
+    }
+  }
+}

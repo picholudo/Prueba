@@ -1,0 +1,37 @@
+{
+    "name": "PuntuacionPrueba",
+    "fields": [
+        {
+            "fieldName": "valor",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "zScore",
+            "otherEntityRelationshipName": "puntuacionPrueba",
+            "relationshipValidateRules": "required",
+            "relationshipName": "zscore",
+            "otherEntityField": "nombre"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "evaluacion",
+            "otherEntityRelationshipName": "puntuacionPrueba",
+            "relationshipValidateRules": "required",
+            "relationshipName": "paciente",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200228181505",
+    "entityTableName": "puntuacion_prueba",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

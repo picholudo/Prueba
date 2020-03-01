@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="puntuacionPrueba">
+            <h2><span jhiTranslate="App.puntuacionPrueba.detail.title">Puntuacion Prueba</span> {{puntuacionPrueba.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="App.puntuacionPrueba.valor">Valor</span></dt>
+                <dd>
+                    <span>{{puntuacionPrueba.valor}}</span>
+                </dd>
+                <dt><span jhiTranslate="App.puntuacionPrueba.zscore">Zscore</span></dt>
+                <dd>
+                    <div *ngIf="puntuacionPrueba.zscoreId">
+                        <a [routerLink]="['/z-score', puntuacionPrueba.zscoreId, 'view']">{{puntuacionPrueba.zscoreNombre}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="App.puntuacionPrueba.paciente">Paciente</span></dt>
+                <dd>
+                    <div *ngIf="puntuacionPrueba.pacienteId">
+                        <a [routerLink]="['/evaluacion', puntuacionPrueba.pacienteId, 'view']">{{puntuacionPrueba.pacienteId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/puntuacion-prueba', puntuacionPrueba.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

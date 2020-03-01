@@ -1,0 +1,28 @@
+{
+  "App": {
+    "estadisticas": {
+      "home": {
+        "title": "Estadisticas",
+        "createLabel": "Crear nuevo Estadisticas",
+        "createOrEditLabel": "Crear o editar Estadisticas",
+        "notFound": "Ningún Estadisticas encontrado"
+      },
+      "created": "Un nuevo Estadisticas ha sido creado con el identificador {{ param }}",
+      "updated": "Un Estadisticas ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Estadisticas ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Estadisticas {{ id }}?"
+      },
+      "detail": {
+        "title": "Estadisticas"
+      },
+      "edad": "Edad",
+      "estudios": "Estudios",
+      "sexo": "Sexo",
+      "prueba": "Prueba",
+      "media": "Media",
+      "desviacion": "Desviacion",
+      "zscore": "Zscore"
+    }
+  }
+}

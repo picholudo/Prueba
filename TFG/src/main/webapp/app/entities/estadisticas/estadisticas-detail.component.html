@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="estadisticas">
+            <h2><span jhiTranslate="App.estadisticas.detail.title">Estadisticas</span> {{estadisticas.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="App.estadisticas.edad">Edad</span></dt>
+                <dd>
+                    <span>{{estadisticas.edad}}</span>
+                </dd>
+                <dt><span jhiTranslate="App.estadisticas.estudios">Estudios</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'App.Nivelestudio.' + estadisticas.estudios}}">{{estadisticas.estudios}}</span>
+                </dd>
+                <dt><span jhiTranslate="App.estadisticas.sexo">Sexo</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'App.Sexo.' + estadisticas.sexo}}">{{estadisticas.sexo}}</span>
+                </dd>
+                <dt><span jhiTranslate="App.estadisticas.prueba">Prueba</span></dt>
+                <dd>
+                    <span>{{estadisticas.prueba}}</span>
+                </dd>
+                <dt><span jhiTranslate="App.estadisticas.media">Media</span></dt>
+                <dd>
+                    <span>{{estadisticas.media}}</span>
+                </dd>
+                <dt><span jhiTranslate="App.estadisticas.desviacion">Desviacion</span></dt>
+                <dd>
+                    <span>{{estadisticas.desviacion}}</span>
+                </dd>
+                <dt><span jhiTranslate="App.estadisticas.zscore">Zscore</span></dt>
+                <dd>
+                    <div *ngIf="estadisticas.zscoreId">
+                        <a [routerLink]="['/z-score', estadisticas.zscoreId, 'view']">{{estadisticas.zscoreNombre}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/estadisticas', estadisticas.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

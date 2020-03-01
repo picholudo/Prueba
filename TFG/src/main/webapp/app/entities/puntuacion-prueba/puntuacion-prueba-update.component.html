@@ -1,0 +1,55 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-puntuacion-prueba-heading" jhiTranslate="App.puntuacionPrueba.home.createOrEditLabel">Create or edit a Puntuacion Prueba</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="App.puntuacionPrueba.valor" for="field_valor">Valor</label>
+                    <input type="number" class="form-control" name="valor" id="field_valor"
+                           formControlName="valor"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="App.puntuacionPrueba.zscore" for="field_zscore">Zscore</label>
+                    <select class="form-control" id="field_zscore" name="zscore" formControlName="zscoreId">
+                        <option *ngIf="!editForm.get('zscoreId')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="zScoreOption.id" *ngFor="let zScoreOption of zscores; trackBy: trackById">{{zScoreOption.nombre}}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('zscoreId')!.invalid && (editForm.get('zscoreId')!.dirty || editForm.get('zscoreId')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('zscoreId')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="App.puntuacionPrueba.paciente" for="field_paciente">Paciente</label>
+                    <select class="form-control" id="field_paciente" name="paciente" formControlName="pacienteId">
+                        <option *ngIf="!editForm.get('pacienteId')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="evaluacionOption.id" *ngFor="let evaluacionOption of evaluacions; trackBy: trackById">{{evaluacionOption.id}}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('pacienteId')!.invalid && (editForm.get('pacienteId')!.dirty || editForm.get('pacienteId')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('pacienteId')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

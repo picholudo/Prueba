@@ -1,0 +1,24 @@
+{
+  "App": {
+    "zScore": {
+      "home": {
+        "title": "Z Scores",
+        "createLabel": "Create a new Z Score",
+        "createOrEditLabel": "Create or edit a Z Score",
+        "notFound": "No Z Scores found"
+      },
+      "created": "A new Z Score is created with identifier {{ param }}",
+      "updated": "A Z Score is updated with identifier {{ param }}",
+      "deleted": "A Z Score is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Z Score {{ id }}?"
+      },
+      "detail": {
+        "title": "Z Score"
+      },
+      "nombre": "Nombre",
+      "estadisticas": "Estadisticas",
+      "puntuacionPrueba": "Puntuacion Prueba"
+    }
+  }
+}

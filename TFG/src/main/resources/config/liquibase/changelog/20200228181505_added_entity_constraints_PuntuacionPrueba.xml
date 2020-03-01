@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity PuntuacionPrueba.
+    -->
+    <changeSet id="20200228181505-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="zscore_id"
+                                 baseTableName="puntuacion_prueba"
+                                 constraintName="fk_puntuacion_prueba_zscore_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="z_score"/>
+
+        <addForeignKeyConstraint baseColumnNames="paciente_id"
+                                 baseTableName="puntuacion_prueba"
+                                 constraintName="fk_puntuacion_prueba_paciente_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="evaluacion"/>
+
+    </changeSet>
+</databaseChangeLog>

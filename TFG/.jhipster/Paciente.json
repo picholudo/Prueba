@@ -1,0 +1,54 @@
+{
+    "name": "Paciente",
+    "fields": [
+        {
+            "fieldName": "sexo",
+            "fieldType": "Sexo",
+            "fieldValues": "Hombre,Mujer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "profesion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "estudios",
+            "fieldType": "Nivelestudio",
+            "fieldValues": "ILETRADO,LEER_Y_ESCRIBIR,LEER_Y_ESCRIBIR_Y_4_REGLAS,PRIMARIOS,SECUNDARIOS,SUPERIORES",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "edad",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 60,
+            "fieldValidateRulesMax": 120
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "evaluacion",
+            "otherEntityRelationshipName": "paciente",
+            "relationshipName": "evaluacion"
+        }
+    ],
+    "changelogDate": "20200228181501",
+    "entityTableName": "paciente",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,93 @@
+entity PuntosCorte{
+	nombre String required,
+    limite Instant required,
+    superarlo Boolean required
+}
+
+enum Nivelestudio {
+    ILETRADO, LEER_Y_ESCRIBIR, LEER_Y_ESCRIBIR_Y_4_REGLAS, PRIMARIOS, SECUNDARIOS, SUPERIORES
+}
+
+enum Sexo {
+	Hombre, Mujer
+}
+
+enum Sospecha {
+	Depresion, Deterioro_cognitivo_leve_con_depresion, Deterioro_cognitivo_leve_sin_depresion, Alzheimer
+}
+
+entity ZScore {
+	nombre String required,
+    
+}
+entity Paciente {
+	sexo Sexo required,
+	profesion String,
+    estudios Nivelestudio required
+	edad Integer required min(60) max(120)
+}
+
+entity Evaluacion{
+	fecha LocalDate required,
+    valoracion	Sospecha required
+}
+
+entity Prueba {
+	nombre String required
+}
+
+entity Estadisticas{
+	edad Integer min(60) max(120),
+    estudios Nivelestudio required,
+    sexo Sexo required,
+    prueba String required,
+    media Long required,
+    desviacion Long required,   
+}
+
+entity PuntuacionPrueba {
+	valor Long
+}
+
+//relationship OneToMany {
+	//Evaluacion to Puntuacion{paciente}
+//}
+
+//relationship OneToMany{
+//	Puntuacion to Prueba
+//}
+
+//relationship ManyToOne{
+//	 Puntuacion{zscore(nombre)} to ZScore 
+//}
+
+relationship OneToMany {
+	ZScore to Estadisticas{zscore(nombre) required}
+}
+
+relationship OneToMany {
+	Paciente to Evaluacion{paciente required} 
+}
+
+relationship OneToMany {
+	ZScore to PuntuacionPrueba{zscore(nombre) required} 
+}
+
+relationship OneToMany {
+	Evaluacion to PuntuacionPrueba{paciente required} 
+}
+
+
+
+
+
+
+
+// Use Data Transfert Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

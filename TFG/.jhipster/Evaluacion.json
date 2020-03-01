@@ -1,0 +1,46 @@
+{
+    "name": "Evaluacion",
+    "fields": [
+        {
+            "fieldName": "fecha",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "valoracion",
+            "fieldType": "Sospecha",
+            "fieldValues": "Depresion,Deterioro_cognitivo_leve_con_depresion,Deterioro_cognitivo_leve_sin_depresion,Alzheimer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "puntuacionPrueba",
+            "otherEntityRelationshipName": "paciente",
+            "relationshipName": "puntuacionPrueba"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "paciente",
+            "otherEntityRelationshipName": "evaluacion",
+            "relationshipValidateRules": "required",
+            "relationshipName": "paciente",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200228181502",
+    "entityTableName": "evaluacion",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,36 @@
+{
+    "name": "ZScore",
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "estadisticas",
+            "otherEntityRelationshipName": "zscore",
+            "relationshipName": "estadisticas"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "puntuacionPrueba",
+            "otherEntityRelationshipName": "zscore",
+            "relationshipName": "puntuacionPrueba"
+        }
+    ],
+    "changelogDate": "20200228181500",
+    "entityTableName": "z_score",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
