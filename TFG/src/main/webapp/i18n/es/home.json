@@ -1,6 +1,6 @@
 {
   "home": {
-    "title": "¡Bienvenido a la Aplicacion Medica!",
+    "title": "¡Hola, Bienvenido a la Aplicación Medica!",
     "subtitle": "Esta es su página de inicio",
     "logged": {
       "message": "Está conectado como \"{{username}}\"."
