@@ -1,5 +1,6 @@
 package com.mycompany.myapp.web.rest;
 
+import com.mycompany.myapp.security.SecurityUtils;
 import com.mycompany.myapp.service.PruebaService;
 import com.mycompany.myapp.web.rest.errors.BadRequestAlertException;
 import com.mycompany.myapp.service.dto.PruebaDTO;
@@ -18,6 +19,8 @@ import java.net.URISyntaxException;
 
 import java.util.List;
 import java.util.Optional;
+
+import static com.mycompany.myapp.security.AuthoritiesConstants.ADMIN;
 
 /**
  * REST controller for managing {@link com.mycompany.myapp.domain.Prueba}.
@@ -112,6 +115,9 @@ public class PruebaResource {
      */
     @DeleteMapping("/pruebas/{id}")
     public ResponseEntity<Void> deletePrueba(@PathVariable Long id) {
+        if (!SecurityUtils.isCurrentUserInRole(ADMIN)){
+            return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(applicationName,true, ENTITY_NAME,"No autorizado", "No autorizado")).body(null);
+        }
         log.debug("REST request to delete Prueba : {}", id);
         pruebaService.delete(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();

@@ -1,5 +1,6 @@
 package com.mycompany.myapp.web.rest;
 
+import com.mycompany.myapp.security.SecurityUtils;
 import com.mycompany.myapp.service.PacienteService;
 import com.mycompany.myapp.web.rest.errors.BadRequestAlertException;
 import com.mycompany.myapp.service.dto.PacienteDTO;
@@ -18,6 +19,8 @@ import java.net.URISyntaxException;
 
 import java.util.List;
 import java.util.Optional;
+
+import static com.mycompany.myapp.security.AuthoritiesConstants.ADMIN;
 
 /**
  * REST controller for managing {@link com.mycompany.myapp.domain.Paciente}.
@@ -112,6 +115,7 @@ public class PacienteResource {
      */
     @DeleteMapping("/pacientes/{id}")
     public ResponseEntity<Void> deletePaciente(@PathVariable Long id) {
+
         log.debug("REST request to delete Paciente : {}", id);
         pacienteService.delete(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
