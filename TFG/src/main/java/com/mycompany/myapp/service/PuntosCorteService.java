@@ -41,5 +41,8 @@ public interface PuntosCorteService {
      */
     void delete(Long id);
 
+    /**
+     * Delete all puntosCorte
+     */
     void deleteAll();
 }
