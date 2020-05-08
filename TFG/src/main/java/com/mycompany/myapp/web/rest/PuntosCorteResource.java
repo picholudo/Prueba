@@ -126,4 +126,15 @@ public class PuntosCorteResource {
         puntosCorteService.delete(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
     }
+
+    @DeleteMapping("/puntos-cortes")
+    public ResponseEntity<Void> deleteAllPuntosCorte() {
+        if (!SecurityUtils.isCurrentUserInRole(ADMIN)){
+            return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(applicationName,true, ENTITY_NAME,"No autorizado", "No autorizado")).body(null);
+        }
+        log.error("Hola2");
+        log.debug("REST request to delete all PuntosCorte");
+        puntosCorteService.deleteAll();
+        return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, "All PuntosCorte deleted")).build();
+    }
 }

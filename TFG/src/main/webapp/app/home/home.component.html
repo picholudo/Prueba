@@ -6,6 +6,11 @@
         <h1 class="display-4" jhiTranslate="home.title">Welcome, Java Hipster!</h1>
         <p class="lead" jhiTranslate="home.subtitle">This is your homepage</p>
 
+        <a class="dropdown-item" routerLink="puntos-corte" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+            <fa-icon icon="plus" fixedWidth="true"></fa-icon>
+            <span jhiTranslate="global.menu.entities.puntosCorte">Puntos Corte</span>
+        </a>
+
         <div [ngSwitch]="isAuthenticated()">
             <div class="alert alert-success" *ngSwitchCase="true">
                 <span id="home-logged-message" *ngIf="account" jhiTranslate="home.logged.message"

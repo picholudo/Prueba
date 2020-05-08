@@ -87,4 +87,10 @@ public class PruebaServiceImpl implements PruebaService {
         log.debug("Request to delete Prueba : {}", id);
         pruebaRepository.deleteById(id);
     }
+
+    @Override
+    public void deleteAll() {
+        log.debug("Request to delete all Prueba");
+        pruebaRepository.deleteAll();
+    }
 }

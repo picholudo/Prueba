@@ -6,6 +6,7 @@ import { PuntosCorteComponent } from './puntos-corte.component';
 import { PuntosCorteDetailComponent } from './puntos-corte-detail.component';
 import { PuntosCorteUpdateComponent } from './puntos-corte-update.component';
 import { PuntosCorteDeleteDialogComponent } from './puntos-corte-delete-dialog.component';
+import { PuntosCorteDeleteAllDialogComponent } from './puntos-corte-delete-all-dialog.component';
 import { puntosCorteRoute } from './puntos-corte.route';
 
 @NgModule({

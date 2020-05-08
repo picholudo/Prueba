@@ -233,7 +233,7 @@ public class PuntosCorteResourceIT {
             .andExpect(jsonPath("$.[*].limite").value(hasItem(DEFAULT_LIMITE.toString())))
             .andExpect(jsonPath("$.[*].superarlo").value(hasItem(DEFAULT_SUPERARLO.booleanValue())));
     }
-    
+
     @Test
     @Transactional
     public void getPuntosCorte() throws Exception {
@@ -326,4 +326,5 @@ public class PuntosCorteResourceIT {
         List<PuntosCorte> puntosCorteList = puntosCorteRepository.findAll();
         assertThat(puntosCorteList).hasSize(databaseSizeBeforeDelete - 1);
     }
+
 }

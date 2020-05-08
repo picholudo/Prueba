@@ -50,6 +50,11 @@ export class PuntosCorteService {
     return this.http.delete(`${this.resourceUrl}/${id}`, { observe: 'response' });
   }
 
+  deleteAll(): Observable<HttpResponse<{}>> {
+    console.error("Hola");
+    return this.http.delete(`${this.resourceUrl}`, { observe: 'response' });
+  }
+
   protected convertDateFromClient(puntosCorte: IPuntosCorte): IPuntosCorte {
     const copy: IPuntosCorte = Object.assign({}, puntosCorte, {
       limite: puntosCorte.limite && puntosCorte.limite.isValid() ? puntosCorte.limite.toJSON() : undefined

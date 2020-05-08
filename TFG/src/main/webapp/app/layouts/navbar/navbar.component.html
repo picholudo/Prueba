@@ -29,43 +29,43 @@
                 <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="entity-menu">
                     <li>
                         <a class="dropdown-item" routerLink="puntos-corte" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
-                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <fa-icon icon="plus" fixedWidth="true"></fa-icon>
                             <span jhiTranslate="global.menu.entities.puntosCorte">Puntos Corte</span>
                         </a>
                     </li>
                     <li>
                         <a class="dropdown-item" routerLink="z-score" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
-                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <fa-icon icon="plus" fixedWidth="true"></fa-icon>
                             <span jhiTranslate="global.menu.entities.zScore">Z Score</span>
                         </a>
                     </li>
                     <li>
                         <a class="dropdown-item" routerLink="paciente" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
-                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <fa-icon icon="plus" fixedWidth="true"></fa-icon>
                             <span jhiTranslate="global.menu.entities.paciente">Paciente</span>
                         </a>
                     </li>
                     <li>
                         <a class="dropdown-item" routerLink="evaluacion" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
-                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <fa-icon icon="plus" fixedWidth="true"></fa-icon>
                             <span jhiTranslate="global.menu.entities.evaluacion">Evaluacion</span>
                         </a>
                     </li>
                     <li>
                         <a class="dropdown-item" routerLink="prueba" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
-                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <fa-icon icon="plus" fixedWidth="true"></fa-icon>
                             <span jhiTranslate="global.menu.entities.prueba">Prueba</span>
                         </a>
                     </li>
                     <li>
                         <a class="dropdown-item" routerLink="estadisticas" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
-                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <fa-icon icon="plus" fixedWidth="true"></fa-icon>
                             <span jhiTranslate="global.menu.entities.estadisticas">Estadisticas</span>
                         </a>
                     </li>
                     <li>
                         <a class="dropdown-item" routerLink="puntuacion-prueba" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
-                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <fa-icon icon="plus" fixedWidth="true"></fa-icon>
                             <span jhiTranslate="global.menu.entities.puntuacionPrueba">Puntuacion Prueba</span>
                         </a>
                     </li>
@@ -142,8 +142,11 @@
                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="account-menu">
                   <span *ngIf="!getImageUrl()">
                     <fa-icon icon="user"></fa-icon>
-                    <span jhiTranslate="global.menu.account.main">
+                    <span jhiTranslate="global.menu.account.main" *ngSwitchCase="false">
                       Account
+                    </span>
+                      <span *ngSwitchCase="true">
+                      {{account.login}}
                     </span>
                   </span>
                   <span *ngIf="getImageUrl()">
