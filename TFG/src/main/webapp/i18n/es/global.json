@@ -13,6 +13,7 @@
         "evaluacion": "Evaluacion",
         "prueba": "Prueba",
         "estadisticas": "Estadisticas",
+        "consulta_Estadisticas": "Ver Estadísticas",
         "puntuacionPrueba": "Puntuacion Prueba",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },

@@ -56,7 +56,9 @@ export class PuntosCorteComponent implements OnInit, OnDestroy {
     modalRef.componentInstance.puntosCorte = puntosCorte;
   }
   deleteAll(): void {
-     this.puntosCorteService.deleteAll();
+    this.puntosCorteService.delete(10);
+    this.eventManager.broadcast('puntosCorteListModification');
+    //this.puntosCorteService.deleteAll();
     console.error("PuntosCorteComponent");
     //const modalRef = this.modalService.open(PuntosCorteDeleteAllDialogComponent, { size: 'lg', backdrop: 'static' });
     /* modalRef.componentInstance.puntosCorte = puntosCorte; */

@@ -9,11 +9,12 @@
         "main": "Entities",
         "puntosCorte": "Puntos Corte",
         "zScore": "Z Score",
-        "paciente": "Paciente",
-        "evaluacion": "Evaluacion",
+        "paciente": "Patient",
+        "evaluacion": "Evaluation",
         "prueba": "Prueba",
-        "estadisticas": "Estadisticas",
-        "puntuacionPrueba": "Puntuacion Prueba",
+        "estadisticas": "Estadistics",
+        "consulta_Estadisticas": "See Estadistics",
+        "puntuacionPrueba": "Score Prueba",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
