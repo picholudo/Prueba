@@ -23,6 +23,27 @@
             </span>
         </button>
 
+        <a *jhiHasAnyAuthority="'ROLE_USER'" class="dropdown-item" routerLink="paciente" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+            <fa-icon icon="plus" fixedWidth="true"></fa-icon>
+            <span jhiTranslate="global.menu.entities.paciente">Paciente</span>
+        </a>
+
+        <a *jhiHasAnyAuthority="'ROLE_USER'" class="dropdown-item" routerLink="prueba" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+            <fa-icon icon="plus" fixedWidth="true"></fa-icon>
+            <span jhiTranslate="global.menu.entities.prueba">Prueba</span>
+        </a>
+
+        <a *jhiHasAnyAuthority="'ROLE_USER'" class="dropdown-item" routerLink="iniciartest" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+            <fa-icon icon="plus" fixedWidth="true"></fa-icon>
+            <span jhiTranslate="global.menu.entities.iniciatest">Iniciar Test</span>
+        </a>
+
+        <a *jhiHasAnyAuthority="'ROLE_MEDIC_BOSS'" class="dropdown-item" routerLink="prueba" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+            <fa-icon icon="plus" fixedWidth="true"></fa-icon>
+            <span jhiTranslate="global.menu.entities.iniciatest">Iniciar Test</span>
+        </a>
+
+        <img class="img-fluid" src="/content/images/undraw_medicine_b1ol.svg" alt="">
 
         <div [ngSwitch]="isAuthenticated()">
             <div class="alert alert-success" *ngSwitchCase="true">
@@ -40,6 +61,7 @@
             </div>
         </div>
 
+        <!--
         <p jhiTranslate="home.question">
             If you have any question on JHipster:
         </p>
@@ -55,5 +77,6 @@
         <p>
             <span jhiTranslate="home.like">If you like JHipster, don't forget to give us a star on</span> <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer" jhiTranslate="home.github">GitHub</a>!
         </p>
+        -->
     </div>
 </div>

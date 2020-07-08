@@ -47,7 +47,7 @@ export class PuntosCorteService {
   }
 
   delete(id: number): Observable<HttpResponse<{}>> {
-    console.error("Hola");
+    console.log("Holaaaaaa");
     return this.http.delete(`${this.resourceUrl}/${id}`, { observe: 'response' });
   }
 

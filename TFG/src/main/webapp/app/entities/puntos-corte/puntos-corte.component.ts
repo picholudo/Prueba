@@ -7,8 +7,6 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { IPuntosCorte } from 'app/shared/model/puntos-corte.model';
 import { PuntosCorteService } from './puntos-corte.service';
 import { PuntosCorteDeleteDialogComponent } from './puntos-corte-delete-dialog.component';
-import {PuntosCorteDeleteAllDialogComponent} from "app/entities/puntos-corte/puntos-corte-delete-all-dialog.component";
-import {ConsoleLogger} from "@angular/compiler-cli/ngcc";
 
 
 @Component({
@@ -56,11 +54,13 @@ export class PuntosCorteComponent implements OnInit, OnDestroy {
     modalRef.componentInstance.puntosCorte = puntosCorte;
   }
   deleteAll(): void {
-    this.puntosCorteService.delete(10);
-    this.eventManager.broadcast('puntosCorteListModification');
-    //this.puntosCorteService.deleteAll();
-    console.error("PuntosCorteComponent");
-    //const modalRef = this.modalService.open(PuntosCorteDeleteAllDialogComponent, { size: 'lg', backdrop: 'static' });
+    this.puntosCorteService.deleteAll().subscribe(() => {
+      this.eventManager.broadcast('puntosCorteListModification');
+      console.log("PuntosCorteComponent");
+    });
+    // this.puntosCorteService.deleteAll();
+
+    // const modalRef = this.modalService.open(PuntosCorteDeleteAllDialogComponent, { size: 'lg', backdrop: 'static' });
     /* modalRef.componentInstance.puntosCorte = puntosCorte; */
   }
 

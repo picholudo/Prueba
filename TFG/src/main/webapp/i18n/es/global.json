@@ -12,6 +12,7 @@
         "paciente": "Paciente",
         "evaluacion": "Evaluacion",
         "prueba": "Prueba",
+        "iniciatest": "Iniciar Test",
         "estadisticas": "Estadisticas",
         "consulta_Estadisticas": "Ver Estadísticas",
         "puntuacionPrueba": "Puntuacion Prueba",
