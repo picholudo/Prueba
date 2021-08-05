@@ -1,0 +1,51 @@
+{
+    "name": "EstadisticaAjusteNeuronorma",
+    "fields": [
+        {
+            "fieldName": "scaledScore",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min"
+            ],
+            "fieldValidateRulesMin": 0
+        },
+        {
+            "fieldName": "ajusteEstudios",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min"
+            ],
+            "fieldValidateRulesMin": 0
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "prueba",
+            "otherEntityRelationshipName": "estadisticaAjusteNeuronorma",
+            "relationshipValidateRules": "required",
+            "relationshipName": "prueba",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "codigoEstudio",
+            "otherEntityRelationshipName": "estadisticaAjusteNeuronorma",
+            "relationshipValidateRules": "required",
+            "relationshipName": "codigoEstudio",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200720114512",
+    "entityTableName": "estadistica_ajuste_neuronorma",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

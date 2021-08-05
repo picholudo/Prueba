@@ -1,0 +1,51 @@
+{
+    "name": "EstadisticaTAVEC",
+    "fields": [
+        {
+            "fieldName": "media",
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "required",
+                "min"
+            ],
+            "fieldValidateRulesMin": 0
+        },
+        {
+            "fieldName": "desviacionTipica",
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "required",
+                "min"
+            ],
+            "fieldValidateRulesMin": 0
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "prueba",
+            "otherEntityRelationshipName": "estadisticaTAVEC",
+            "relationshipValidateRules": "required",
+            "relationshipName": "prueba",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "edadTipoPrueba",
+            "otherEntityRelationshipName": "estadisticaTAVEC",
+            "relationshipValidateRules": "required",
+            "relationshipName": "edadTipoPrueba",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200720114515",
+    "entityTableName": "estadistica_tavec",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

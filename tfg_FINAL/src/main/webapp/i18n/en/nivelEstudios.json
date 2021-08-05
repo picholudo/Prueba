@@ -1,0 +1,13 @@
+{
+  "App": {
+    "NivelEstudios": {
+      "null": "",
+      "ILETRADO": "ILETRADO",
+      "LEER_Y_ESCRIBIR": "LEER_Y_ESCRIBIR",
+      "LEER_Y_ESCRIBIR_Y_4_REGLAS": "LEER_Y_ESCRIBIR_Y_4_REGLAS",
+      "PRIMARIOS": "PRIMARIOS",
+      "SECUNDARIOS": "SECUNDARIOS",
+      "SUPERIORES": "SUPERIORES"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+    "name": "CodigoEstudio",
+    "fields": [
+        {
+            "fieldName": "nivelEstudios",
+            "fieldType": "NivelEstudios",
+            "fieldValues": "ILETRADO,LEER_Y_ESCRIBIR,LEER_Y_ESCRIBIR_Y_4_REGLAS,PRIMARIOS,SECUNDARIOS,SUPERIORES",
+            "fieldValidateRules": [
+                "unique",
+                "required"
+            ]
+        },
+        {
+            "fieldName": "codigo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "unique",
+                "required"
+            ]
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200716113903",
+    "entityTableName": "codigo_estudio",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

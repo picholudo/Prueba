@@ -1,0 +1,44 @@
+{
+    "name": "ResultadoPrueba",
+    "fields": [
+        {
+            "fieldName": "pd",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "min"
+            ],
+            "fieldValidateRulesMin": 0
+        },
+        {
+            "fieldName": "pz",
+            "fieldType": "Float"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "prueba",
+            "otherEntityRelationshipName": "resultadoPrueba",
+            "relationshipValidateRules": "required",
+            "relationshipName": "prueba",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "informe",
+            "otherEntityRelationshipName": "resultadoPrueba",
+            "relationshipName": "informe",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200720072922",
+    "entityTableName": "resultado_prueba",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

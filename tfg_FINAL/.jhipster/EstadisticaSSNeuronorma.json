@@ -1,0 +1,51 @@
+{
+    "name": "EstadisticaSSNeuronorma",
+    "fields": [
+        {
+            "fieldName": "pd",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min"
+            ],
+            "fieldValidateRulesMin": 0
+        },
+        {
+            "fieldName": "scaledScore",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min"
+            ],
+            "fieldValidateRulesMin": 0
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "prueba",
+            "otherEntityRelationshipName": "estadisticaSSNeuronorma",
+            "relationshipValidateRules": "required",
+            "relationshipName": "prueba",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "edadTipoPrueba",
+            "otherEntityRelationshipName": "estadisticaSSNeuronorma",
+            "relationshipValidateRules": "required",
+            "relationshipName": "edadTipoPrueba",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200720114511",
+    "entityTableName": "estadistica_ss_neuronorma",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

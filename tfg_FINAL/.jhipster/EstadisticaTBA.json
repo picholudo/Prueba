@@ -1,0 +1,59 @@
+{
+    "name": "EstadisticaTBA",
+    "fields": [
+        {
+            "fieldName": "media",
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "required",
+                "min"
+            ],
+            "fieldValidateRulesMin": 0
+        },
+        {
+            "fieldName": "desviacionTipica",
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "required",
+                "min"
+            ],
+            "fieldValidateRulesMin": 0
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "prueba",
+            "otherEntityRelationshipName": "estadisticaTBA",
+            "relationshipValidateRules": "required",
+            "relationshipName": "prueba",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "codigoEstudio",
+            "otherEntityRelationshipName": "estadisticaTBA",
+            "relationshipValidateRules": "required",
+            "relationshipName": "codigoEstudio",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "edadTipoPrueba",
+            "otherEntityRelationshipName": "estadisticaTBA",
+            "relationshipValidateRules": "required",
+            "relationshipName": "edadTipoPrueba",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200720114516",
+    "entityTableName": "estadistica_tba",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

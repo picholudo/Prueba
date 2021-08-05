@@ -1,0 +1,16 @@
+version: '2'
+services:
+  2802-app:
+    image: 2802
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - SPRING_PROFILES_ACTIVE=prod,swagger
+      - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
+      - SPRING_DATASOURCE_URL=jdbc:mariadb://2802-mariadb:3306/2802
+      - JHIPSTER_SLEEP=120 # gives time for mariadb server to start
+    ports:
+      - 8080:8080
+  2802-mariadb:
+    extends:
+      file: mariadb.yml
+      service: 2802-mariadb

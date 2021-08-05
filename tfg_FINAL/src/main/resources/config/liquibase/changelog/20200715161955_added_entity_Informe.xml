@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+        <property name="autoIncrement" value="true"/>
+
+    <!--
+        Added the entity Informe.
+    -->
+    <changeSet id="20200715161955-1" author="jhipster">
+        <createTable tableName="informe">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="sospecha_clinica" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sospecha_clinica_sugerida" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="fecha_evaluacion" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="motivo_consulta" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="orientacion" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="memoria" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="praxias" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="lenguaje" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="funciones_ejecutivas" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="conducta" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="actividades_diarias" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="resumen" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="user_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="paciente_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20200715161955-1-relations" author="jhipster">
+
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20200715161955-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/informe.csv"
+                  separator=";"
+                  tableName="informe">
+            <column name="id" type="numeric"/>
+            <column name="sospecha_clinica" type="string"/>
+            <column name="sospecha_clinica_sugerida" type="string"/>
+            <column name="fecha_evaluacion" type="date"/>
+            <column name="motivo_consulta" type="string"/>
+            <column name="orientacion" type="string"/>
+            <column name="memoria" type="string"/>
+            <column name="praxias" type="string"/>
+            <column name="lenguaje" type="string"/>
+            <column name="funciones_ejecutivas" type="string"/>
+            <column name="conducta" type="string"/>
+            <column name="actividades_diarias" type="string"/>
+            <column name="resumen" type="string"/>
+            <column name="user_id" type="numeric"/>
+            <column name="paciente_id" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,25 @@
+{
+  "App": {
+    "estadisticaTAVEC": {
+      "home": {
+        "title": "Estadistica TAVECS",
+        "createLabel": "Create a new Estadistica TAVEC",
+        "createOrEditLabel": "Create or edit a Estadistica TAVEC",
+        "notFound": "No Estadistica TAVECS found"
+      },
+      "created": "A new Estadistica TAVEC is created with identifier {{ param }}",
+      "updated": "A Estadistica TAVEC is updated with identifier {{ param }}",
+      "deleted": "A Estadistica TAVEC is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Estadistica TAVEC {{ id }}?"
+      },
+      "detail": {
+        "title": "Estadistica TAVEC"
+      },
+      "media": "Media",
+      "desviacionTipica": "Desviacion Tipica",
+      "prueba": "Prueba",
+      "edadTipoPrueba": "Edad Tipo Prueba"
+    }
+  }
+}

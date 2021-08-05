@@ -1,0 +1,92 @@
+{
+    "name": "Informe",
+    "fields": [
+        {
+            "fieldName": "sospechaClinica",
+            "fieldType": "SospechaClinica",
+            "fieldValues": "DEPRESION,DETERIORO_COGNITIVO_LEVE_CON_DEPRESION,DETERIORO_COGNITIVO_LEVE_SIN_DEPRESION,ALZHEIMER"
+        },
+        {
+            "fieldName": "sospechaClinicaSugerida",
+            "fieldType": "SospechaClinicaSugerida",
+            "fieldValues": "DEPRESION,DETERIORO_COGNITIVO_LEVE_CON_DEPRESION,DETERIORO_COGNITIVO_LEVE_SIN_DEPRESION,ALZHEIMER"
+        },
+        {
+            "fieldName": "fechaEvaluacion",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "motivoConsulta",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "orientacion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "memoria",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "praxias",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lenguaje",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "funcionesEjecutivas",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "conducta",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "actividadesDiarias",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "resumen",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "resultadoPrueba",
+            "otherEntityRelationshipName": "informe",
+            "relationshipName": "resultadoPrueba"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "informe",
+            "relationshipValidateRules": "required",
+            "relationshipName": "user",
+            "otherEntityField": "email"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "paciente",
+            "otherEntityRelationshipName": "informe",
+            "relationshipValidateRules": "required",
+            "relationshipName": "paciente",
+            "otherEntityField": "nombre"
+        }
+    ],
+    "changelogDate": "20200715161955",
+    "entityTableName": "informe",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

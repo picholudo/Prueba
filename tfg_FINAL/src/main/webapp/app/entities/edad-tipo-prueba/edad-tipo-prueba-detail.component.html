@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="edadTipoPrueba">
+            <h2><span jhiTranslate="App.edadTipoPrueba.detail.title">Edad Tipo Prueba</span> {{edadTipoPrueba.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="App.edadTipoPrueba.codigo">Codigo</span></dt>
+                <dd>
+                    <span>{{edadTipoPrueba.codigo}}</span>
+                </dd>
+                <dt><span jhiTranslate="App.edadTipoPrueba.edadMinima">Edad Minima</span></dt>
+                <dd>
+                    <span>{{edadTipoPrueba.edadMinima}}</span>
+                </dd>
+                <dt><span jhiTranslate="App.edadTipoPrueba.edadMaxima">Edad Maxima</span></dt>
+                <dd>
+                    <span>{{edadTipoPrueba.edadMaxima}}</span>
+                </dd>
+                <dt><span jhiTranslate="App.edadTipoPrueba.tipoPrueba">Tipo Prueba</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'App.TipoPrueba.' + edadTipoPrueba.tipoPrueba}}">{{edadTipoPrueba.tipoPrueba}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/edad-tipo-prueba', edadTipoPrueba.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

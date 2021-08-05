@@ -1,0 +1,26 @@
+{
+  "App": {
+    "estadisticaTBA": {
+      "home": {
+        "title": "Estadistica TBAS",
+        "createLabel": "Crear nuevo Estadistica TBA",
+        "createOrEditLabel": "Crear o editar Estadistica TBA",
+        "notFound": "Ningún Estadistica TBAS encontrado"
+      },
+      "created": "Un nuevo Estadistica TBA ha sido creado con el identificador {{ param }}",
+      "updated": "Un Estadistica TBA ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Estadistica TBA ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Estadistica TBA {{ id }}?"
+      },
+      "detail": {
+        "title": "Estadistica TBA"
+      },
+      "media": "Media",
+      "desviacionTipica": "Desviacion Tipica",
+      "prueba": "Prueba",
+      "codigoEstudio": "Codigo Estudio",
+      "edadTipoPrueba": "Edad Tipo Prueba"
+    }
+  }
+}

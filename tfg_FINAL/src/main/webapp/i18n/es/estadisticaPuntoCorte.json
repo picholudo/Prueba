@@ -1,0 +1,23 @@
+{
+  "App": {
+    "estadisticaPuntoCorte": {
+      "home": {
+        "title": "Estadistica Punto Cortes",
+        "createLabel": "Crear nuevo Estadistica Punto Corte",
+        "createOrEditLabel": "Crear o editar Estadistica Punto Corte",
+        "notFound": "Ningún Estadistica Punto Cortes encontrado"
+      },
+      "created": "Un nuevo Estadistica Punto Corte ha sido creado con el identificador {{ param }}",
+      "updated": "Un Estadistica Punto Corte ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Estadistica Punto Corte ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Estadistica Punto Corte {{ id }}?"
+      },
+      "detail": {
+        "title": "Estadistica Punto Corte"
+      },
+      "puntoCorte": "Punto Corte",
+      "prueba": "Prueba"
+    }
+  }
+}

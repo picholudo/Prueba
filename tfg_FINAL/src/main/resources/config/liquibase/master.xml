@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+    <property name="now" value="now()" dbms="mysql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql, mariadb"/>
+    <property name="clobType" value="clob" dbms="h2"/>
+    <property name="clobType" value="clob" dbms="mysql, oracle, mssql, mariadb, postgresql"/>
+    <property name="uuidType" value="varchar(36)" dbms="h2, mysql, mariadb"/>
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200228181501_added_entity_Paciente.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200228181503_added_entity_Prueba.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200715153341_added_entity_EdadTipoPrueba.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200715161955_added_entity_Informe.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200716113903_added_entity_CodigoEstudio.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200716113904_added_entity_EstadisticaMMSE.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200720072922_added_entity_ResultadoPrueba.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200720114511_added_entity_EstadisticaSSNeuronorma.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200720114512_added_entity_EstadisticaAjusteNeuronorma.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200720114513_added_entity_EstadisticaPzNeuronorma.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200720114514_added_entity_EstadisticaFAB.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200720114515_added_entity_EstadisticaTAVEC.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200720114516_added_entity_EstadisticaTBA.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200721103032_added_entity_EstadisticaPuntoCorte.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201003094913_added_entity_Grupo.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20200715161955_added_entity_constraints_Informe.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200716113904_added_entity_constraints_EstadisticaMMSE.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200720072922_added_entity_constraints_ResultadoPrueba.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200720114511_added_entity_constraints_EstadisticaSSNeuronorma.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200720114512_added_entity_constraints_EstadisticaAjusteNeuronorma.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200720114514_added_entity_constraints_EstadisticaFAB.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200720114515_added_entity_constraints_EstadisticaTAVEC.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200720114516_added_entity_constraints_EstadisticaTBA.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200721103032_added_entity_constraints_EstadisticaPuntoCorte.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201003094913_added_entity_constraints_Grupo.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+    <include file="config/liquibase/changelog/20200801000000_load_data.xml" relativeToChangelogFile="false"/>
+</databaseChangeLog>

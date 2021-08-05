@@ -1,0 +1,23 @@
+{
+  "App": {
+    "codigoEstudio": {
+      "home": {
+        "title": "Codigo Estudios",
+        "createLabel": "Create a new Codigo Estudio",
+        "createOrEditLabel": "Create or edit a Codigo Estudio",
+        "notFound": "No Codigo Estudios found"
+      },
+      "created": "A new Codigo Estudio is created with identifier {{ param }}",
+      "updated": "A Codigo Estudio is updated with identifier {{ param }}",
+      "deleted": "A Codigo Estudio is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Codigo Estudio {{ id }}?"
+      },
+      "detail": {
+        "title": "Codigo Estudio"
+      },
+      "nivelEstudios": "Nivel Estudios",
+      "codigo": "Codigo"
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+    "name": "Paciente",
+    "fields": [
+        {
+            "fieldName": "nhc",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "nombre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "sexo",
+            "fieldType": "Sexo",
+            "fieldValues": "HOMBRE,MUJER",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "profesion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "estudios",
+            "fieldType": "NivelEstudios",
+            "fieldValues": "ILETRADO,LEER_Y_ESCRIBIR,LEER_Y_ESCRIBIR_Y_4_REGLAS,PRIMARIOS,SECUNDARIOS,SUPERIORES",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "edad",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min"
+            ],
+            "fieldValidateRulesMin": 0
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "informe",
+            "otherEntityRelationshipName": "paciente",
+            "relationshipName": "informe"
+        }
+    ],
+    "changelogDate": "20200228181501",
+    "entityTableName": "paciente",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

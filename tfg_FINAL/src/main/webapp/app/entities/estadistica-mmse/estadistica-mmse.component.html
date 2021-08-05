@@ -1,0 +1,69 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="App.estadisticaMMSE.home.title">Estadistica MMSES</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-estadistica-mmse" [routerLink]="['/estadistica-mmse/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="App.estadisticaMMSE.home.createLabel">
+            Create a new Estadistica MMSE
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="estadisticaMMSES?.length === 0">
+        <span jhiTranslate="App.estadisticaMMSE.home.notFound">No estadisticaMMSEs found</span>
+    </div>
+    <div class="table-responsive" *ngIf="estadisticaMMSES?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="App.estadisticaMMSE.codigoEstudio">Codigo Estudio</span></th>
+            <th scope="col" ><span jhiTranslate="App.estadisticaMMSE.edadTipoPrueba">Edad Tipo Prueba</span></th>
+            <th scope="col" ><span jhiTranslate="App.estadisticaMMSE.media">Media</span></th>
+            <th scope="col" ><span jhiTranslate="App.estadisticaMMSE.desviacionTipica">Desviacion Tipica</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let estadisticaMMSE of estadisticaMMSES ;trackBy: trackId">
+                <td><a [routerLink]="['/estadistica-mmse', estadisticaMMSE.id, 'view' ]">{{estadisticaMMSE.id}}</a></td>
+                <td>
+                    <div *ngIf="estadisticaMMSE.codigoEstudioId">
+                        <a [routerLink]="['/codigo-estudio', estadisticaMMSE.codigoEstudioId , 'view' ]" >{{estadisticaMMSE.codigoEstudioNivelEstudios}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="estadisticaMMSE.edadTipoPruebaId">
+                        <a [routerLink]="['/edad-tipo-prueba', estadisticaMMSE.edadTipoPruebaId , 'view' ]" >{{estadisticaMMSE.edadTipoPruebaTipoPrueba}}</a>
+                    </div>
+                </td>
+                <td>{{estadisticaMMSE.media}}</td>
+                <td>{{estadisticaMMSE.desviacionTipica}}</td>                
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/estadistica-mmse', estadisticaMMSE.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/estadistica-mmse', estadisticaMMSE.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(estadisticaMMSE)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

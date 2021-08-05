@@ -1,0 +1,25 @@
+{
+  "App": {
+    "estadisticaAjusteNeuronorma": {
+      "home": {
+        "title": "Estadistica Ajuste Neuronormas",
+        "createLabel": "Crear nuevo Estadistica Ajuste Neuronorma",
+        "createOrEditLabel": "Crear o editar Estadistica Ajuste Neuronorma",
+        "notFound": "Ningún Estadistica Ajuste Neuronormas encontrado"
+      },
+      "created": "Un nuevo Estadistica Ajuste Neuronorma ha sido creado con el identificador {{ param }}",
+      "updated": "Un Estadistica Ajuste Neuronorma ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Estadistica Ajuste Neuronorma ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Estadistica Ajuste Neuronorma {{ id }}?"
+      },
+      "detail": {
+        "title": "Estadistica Ajuste Neuronorma"
+      },
+      "scaledScore": "Scaled Score",
+      "ajusteEstudios": "Ajuste Estudios",
+      "prueba": "Prueba",
+      "codigoEstudio": "Codigo Estudio"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="estadisticaPzNeuronorma">
+            <h2><span jhiTranslate="App.estadisticaPzNeuronorma.detail.title">Estadistica Pz Neuronorma</span> {{estadisticaPzNeuronorma.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="App.estadisticaPzNeuronorma.ajusteEstudios">Ajuste Estudios</span></dt>
+                <dd>
+                    <span>{{estadisticaPzNeuronorma.ajusteEstudios}}</span>
+                </dd>
+                <dt><span jhiTranslate="App.estadisticaPzNeuronorma.pz">Pz</span></dt>
+                <dd>
+                    <span>{{estadisticaPzNeuronorma.pz}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/estadistica-pz-neuronorma', estadisticaPzNeuronorma.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

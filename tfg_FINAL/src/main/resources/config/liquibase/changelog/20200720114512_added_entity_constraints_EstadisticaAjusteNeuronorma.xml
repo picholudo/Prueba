@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity EstadisticaAjusteNeuronorma.
+    -->
+    <changeSet id="20200720114512-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="prueba_id"
+                                 baseTableName="estadistica_ajuste_neuronorma"
+                                 constraintName="fk_estadistica_ajuste_neuronorma_prueba_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="prueba"/>
+
+        <addForeignKeyConstraint baseColumnNames="codigo_estudio_id"
+                                 baseTableName="estadistica_ajuste_neuronorma"
+                                 constraintName="fk_estadistica_ajuste_neuronorma_codigo_estudio_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="codigo_estudio"/>
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,36 @@
+{
+  "App": {
+    "informe": {
+      "home": {
+        "title": "Informes",
+        "createLabel": "Create a new Informe",
+        "createOrEditLabel": "Create or edit a Informe",
+        "notFound": "No Informes found"
+      },
+      "created": "A new Informe is created with identifier {{ param }}",
+      "updated": "A Informe is updated with identifier {{ param }}",
+      "deleted": "A Informe is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Informe {{ id }}?"
+      },
+      "detail": {
+        "title": "Informe"
+      },
+      "sospechaClinica": "Sospecha Clinica",
+      "sospechaClinicaSugerida": "Sospecha ClinicaSugerida",
+      "fechaEvaluacion": "Fecha Evaluacion",
+      "motivoConsulta": "Motivo Consulta",
+      "orientacion": "Orientacion",
+      "memoria": "Memoria",
+      "praxias": "Praxias",
+      "lenguaje": "Lenguaje",
+      "funcionesEjecutivas": "Funciones Ejecutivas",
+      "conducta": "Conducta",
+      "actividadesDiarias": "Actividades Diarias",
+      "resumen": "Resumen",
+      "resultadoPrueba": "Resultado Prueba",
+      "user": "User",
+      "paciente": "Paciente"
+    }
+  }
+}

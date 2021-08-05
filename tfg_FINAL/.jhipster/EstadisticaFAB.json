@@ -1,0 +1,51 @@
+{
+    "name": "EstadisticaFAB",
+    "fields": [
+        {
+            "fieldName": "media",
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "required",
+                "min"
+            ],
+            "fieldValidateRulesMin": 0
+        },
+        {
+            "fieldName": "desviacionTipica",
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "required",
+                "min"
+            ],
+            "fieldValidateRulesMin": 0
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "codigoEstudio",
+            "otherEntityRelationshipName": "estadisticaFAB",
+            "relationshipValidateRules": "required",
+            "relationshipName": "codigoEstudio",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "edadTipoPrueba",
+            "otherEntityRelationshipName": "estadisticaFAB",
+            "relationshipValidateRules": "required",
+            "relationshipName": "edadTipoPrueba",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200720114514",
+    "entityTableName": "estadistica_fab",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

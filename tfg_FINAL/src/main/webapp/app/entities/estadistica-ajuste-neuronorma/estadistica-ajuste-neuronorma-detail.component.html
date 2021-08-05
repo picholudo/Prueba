@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="estadisticaAjusteNeuronorma">
+            <h2><span jhiTranslate="App.estadisticaAjusteNeuronorma.detail.title">Estadistica Ajuste Neuronorma</span> {{estadisticaAjusteNeuronorma.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="App.estadisticaAjusteNeuronorma.prueba">Prueba</span></dt>
+                <dd>
+                    <div *ngIf="estadisticaAjusteNeuronorma.pruebaId">
+                        <a [routerLink]="['/prueba', estadisticaAjusteNeuronorma.pruebaId, 'view']">{{estadisticaAjusteNeuronorma.pruebaNombre}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="App.estadisticaAjusteNeuronorma.codigoEstudio">Codigo Estudio</span></dt>
+                <dd>
+                    <div *ngIf="estadisticaAjusteNeuronorma.codigoEstudioId">
+                        <a [routerLink]="['/codigo-estudio', estadisticaAjusteNeuronorma.codigoEstudioId, 'view']">{{estadisticaAjusteNeuronorma.codigoEstudioNivelEstudios}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="App.estadisticaAjusteNeuronorma.scaledScore">Scaled Score</span></dt>
+                <dd>
+                    <span>{{estadisticaAjusteNeuronorma.scaledScore}}</span>
+                </dd>
+                <dt><span jhiTranslate="App.estadisticaAjusteNeuronorma.ajusteEstudios">Ajuste Estudios</span></dt>
+                <dd>
+                    <span>{{estadisticaAjusteNeuronorma.ajusteEstudios}}</span>
+                </dd>
+                
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/estadistica-ajuste-neuronorma', estadisticaAjusteNeuronorma.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

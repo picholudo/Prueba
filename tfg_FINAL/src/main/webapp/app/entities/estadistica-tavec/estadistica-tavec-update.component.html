@@ -1,0 +1,87 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-estadistica-tavec-heading" jhiTranslate="App.estadisticaTAVEC.home.createOrEditLabel">Create or edit a Estadistica TAVEC</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="App.estadisticaTAVEC.prueba" for="field_prueba">Prueba</label>
+                    <select class="form-control" id="field_prueba" name="prueba" formControlName="pruebaId">
+                        <option *ngIf="!editForm.get('pruebaId')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="pruebaOption.id" *ngFor="let pruebaOption of pruebas; trackBy: trackById">{{pruebaOption.nombre}}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('pruebaId')!.invalid && (editForm.get('pruebaId')!.dirty || editForm.get('pruebaId')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('pruebaId')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="App.estadisticaTAVEC.edadTipoPrueba" for="field_edadTipoPrueba">Edad Tipo Prueba</label>
+                    <select class="form-control" id="field_edadTipoPrueba" name="edadTipoPrueba" formControlName="edadTipoPruebaId">
+                        <option *ngIf="!editForm.get('edadTipoPruebaId')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="edadTipoPruebaOption.id" *ngFor="let edadTipoPruebaOption of edadtipopruebas; trackBy: trackById">{{edadTipoPruebaOption.codigo}} - [{{edadTipoPruebaOption.edadMinima}}, {{edadTipoPruebaOption.edadMaxima}}]</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('edadTipoPruebaId')!.invalid && (editForm.get('edadTipoPruebaId')!.dirty || editForm.get('edadTipoPruebaId')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('edadTipoPruebaId')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>                
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="App.estadisticaTAVEC.media" for="field_media">Media</label>
+                    <input type="number" class="form-control" name="media" id="field_media"
+                           formControlName="media"/>
+                    <div *ngIf="editForm.get('media')!.invalid && (editForm.get('media')!.dirty || editForm.get('media')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('media')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('media')?.errors?.min" jhiTranslate="entity.validation.min" [translateValues]="{ min: 0 }">
+                            This field should be at least 0.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('media')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="App.estadisticaTAVEC.desviacionTipica" for="field_desviacionTipica">Desviacion Tipica</label>
+                    <input type="number" class="form-control" name="desviacionTipica" id="field_desviacionTipica"
+                           formControlName="desviacionTipica"/>
+                    <div *ngIf="editForm.get('desviacionTipica')!.invalid && (editForm.get('desviacionTipica')!.dirty || editForm.get('desviacionTipica')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('desviacionTipica')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('desviacionTipica')?.errors?.min" jhiTranslate="entity.validation.min" [translateValues]="{ min: 0 }">
+                            This field should be at least 0.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('desviacionTipica')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

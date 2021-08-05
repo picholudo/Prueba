@@ -1,0 +1,23 @@
+{
+  "App": {
+    "estadisticaPzNeuronorma": {
+      "home": {
+        "title": "Estadistica Pz Neuronormas",
+        "createLabel": "Crear nuevo Estadistica Pz Neuronorma",
+        "createOrEditLabel": "Crear o editar Estadistica Pz Neuronorma",
+        "notFound": "Ningún Estadistica Pz Neuronormas encontrado"
+      },
+      "created": "Un nuevo Estadistica Pz Neuronorma ha sido creado con el identificador {{ param }}",
+      "updated": "Un Estadistica Pz Neuronorma ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Estadistica Pz Neuronorma ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Estadistica Pz Neuronorma {{ id }}?"
+      },
+      "detail": {
+        "title": "Estadistica Pz Neuronorma"
+      },
+      "ajusteEstudios": "Ajuste Estudios",
+      "pz": "Pz"
+    }
+  }
+}

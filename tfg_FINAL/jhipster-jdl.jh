@@ -1,0 +1,162 @@
+// ------------------------------ constants
+DEFAULT_MIN = 0
+
+// ------------------------------ enums
+enum NivelEstudios {
+    ILETRADO, LEER_Y_ESCRIBIR, LEER_Y_ESCRIBIR_Y_4_REGLAS, PRIMARIOS, SECUNDARIOS, SUPERIORES
+}
+
+enum TipoPrueba {
+	MMSE, NEURONORMA, FAB, TAVEC, TBA, PUNTOS_DE_CORTE
+}
+
+enum Sexo {
+	HOMBRE, MUJER
+}
+
+enum SospechaClinica {
+	DEPRESION, DETERIORO_COGNITIVO_LEVE_CON_DEPRESION, DETERIORO_COGNITIVO_LEVE_SIN_DEPRESION, ALZHEIMER
+}
+enum SospechaClinicaSugerida {
+	DEPRESION, DETERIORO_COGNITIVO_LEVE_CON_DEPRESION, DETERIORO_COGNITIVO_LEVE_SIN_DEPRESION, ALZHEIMER
+}
+
+// ------------------------------ entities 
+entity Paciente {
+	nhc Integer required unique,
+	nombre String required, 
+	sexo Sexo required,
+	profesion String,
+    estudios NivelEstudios required,
+	edad Integer required min(DEFAULT_MIN)
+}
+
+entity EdadTipoPrueba {
+	codigo String required,
+	edadMinima Integer required,
+	edadMaxima Integer required,
+	tipoPrueba TipoPrueba required
+}
+
+entity CodigoEstudio {
+	nivelEstudios NivelEstudios unique required,
+	codigo String unique required
+
+}
+
+entity Informe {
+	sospechaClinica SospechaClinica,
+    sospechaClinicaSugerida SospechaClinicaSugerida,
+	fechaEvaluacion LocalDate required,
+	motivoConsulta String,
+	orientacion String,
+	memoria String, 
+	praxias String,  
+	lenguaje String, 
+	funcionesEjecutivas String,
+	conducta String,
+	actividadesDiarias String,
+	resumen String
+}
+
+entity Prueba {
+	tipoPrueba TipoPrueba required,
+	nombre String required,
+	codigo String required
+}
+
+entity ResultadoPrueba {
+	pd Integer min(DEFAULT_MIN),
+	pz Float  
+}
+
+entity EstadisticaMMSE {
+	media Float required min(DEFAULT_MIN),
+	desviacionTipica Float required min(DEFAULT_MIN)
+}
+
+entity EstadisticaSSNeuronorma {
+	pd Integer required min(DEFAULT_MIN),
+	scaledScore Integer required min(DEFAULT_MIN)
+}
+
+entity EstadisticaAjusteNeuronorma {
+	scaledScore Integer required min(DEFAULT_MIN),
+	ajusteEstudios Integer required min(DEFAULT_MIN)
+}
+
+entity EstadisticaPzNeuronorma {
+	ajusteEstudios Integer required min(DEFAULT_MIN),
+	pz Float required
+}
+
+entity EstadisticaFAB {
+	media Float required min(DEFAULT_MIN),
+	desviacionTipica Float required min(DEFAULT_MIN)
+}
+
+entity EstadisticaTAVEC {
+	media Float required min(DEFAULT_MIN),
+	desviacionTipica Float required min(DEFAULT_MIN)
+}
+
+entity EstadisticaTBA {
+	media Float required min(DEFAULT_MIN),
+	desviacionTipica Float required min(DEFAULT_MIN)
+}
+
+entity EstadisticaPuntoCorte {
+	puntoCorte Integer required min(DEFAULT_MIN)
+}
+
+entity Grupo {
+	nombre String required
+}
+
+
+// ------------------------------ relationships 
+relationship OneToMany {
+	Paciente to Informe{paciente(nombre) required},
+	Informe to ResultadoPrueba
+}
+
+relationship ManyToOne {
+	ResultadoPrueba{prueba required} to Prueba,
+
+	EstadisticaMMSE{codigoEstudio required} to CodigoEstudio,
+	EstadisticaMMSE{edadTipoPrueba required} to EdadTipoPrueba,
+
+	EstadisticaSSNeuronorma{prueba required} to Prueba,
+	EstadisticaSSNeuronorma{edadTipoPrueba required} to EdadTipoPrueba,
+
+	EstadisticaAjusteNeuronorma{prueba required} to Prueba,
+	EstadisticaAjusteNeuronorma{codigoEstudio required} to CodigoEstudio,
+
+	EstadisticaFAB{codigoEstudio required} to CodigoEstudio,
+	EstadisticaFAB{edadTipoPrueba required} to EdadTipoPrueba,
+
+	EstadisticaTAVEC{prueba required} to Prueba,
+	EstadisticaTAVEC{edadTipoPrueba required} to EdadTipoPrueba,	
+
+	EstadisticaTBA{prueba required} to Prueba,
+	EstadisticaTBA{codigoEstudio required} to CodigoEstudio,
+	EstadisticaTBA{edadTipoPrueba required} to EdadTipoPrueba,
+	
+	EstadisticaPuntoCorte{prueba required} to Prueba,	
+	
+	Informe{user(email) required} to User
+}
+
+relationship ManyToMany {
+	Grupo{user} to User{grupo}
+}
+
+
+// Use Data Transfert Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

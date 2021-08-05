@@ -1,0 +1,23 @@
+{
+  "App": {
+    "codigoEstudio": {
+      "home": {
+        "title": "Codigo Estudios",
+        "createLabel": "Crear nuevo Codigo Estudio",
+        "createOrEditLabel": "Crear o editar Codigo Estudio",
+        "notFound": "Ningún Codigo Estudios encontrado"
+      },
+      "created": "Un nuevo Codigo Estudio ha sido creado con el identificador {{ param }}",
+      "updated": "Un Codigo Estudio ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Codigo Estudio ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Codigo Estudio {{ id }}?"
+      },
+      "detail": {
+        "title": "Codigo Estudio"
+      },
+      "nivelEstudios": "Nivel Estudios",
+      "codigo": "Codigo"
+    }
+  }
+}

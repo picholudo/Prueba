@@ -1,0 +1,13 @@
+{
+  "App": {
+    "TipoPrueba": {
+      "null": "",
+      "MMSE": "MMSE",
+      "NEURONORMA": "NEURONORMA",
+      "FAB": "FAB",
+      "TAVEC": "TAVEC",
+      "TBA": "TBA",
+      "PUNTOS_DE_CORTE": "PUNTOS_DE_CORTE"
+    }
+  }
+}

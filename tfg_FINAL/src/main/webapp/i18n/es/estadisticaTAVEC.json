@@ -1,0 +1,25 @@
+{
+  "App": {
+    "estadisticaTAVEC": {
+      "home": {
+        "title": "Estadistica TAVECS",
+        "createLabel": "Crear nuevo Estadistica TAVEC",
+        "createOrEditLabel": "Crear o editar Estadistica TAVEC",
+        "notFound": "Ningún Estadistica TAVECS encontrado"
+      },
+      "created": "Un nuevo Estadistica TAVEC ha sido creado con el identificador {{ param }}",
+      "updated": "Un Estadistica TAVEC ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Estadistica TAVEC ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Estadistica TAVEC {{ id }}?"
+      },
+      "detail": {
+        "title": "Estadistica TAVEC"
+      },
+      "media": "Media",
+      "desviacionTipica": "Desviacion Tipica",
+      "prueba": "Prueba",
+      "edadTipoPrueba": "Edad Tipo Prueba"
+    }
+  }
+}

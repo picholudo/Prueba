@@ -1,0 +1,31 @@
+id;tipo_prueba;nombre;codigo
+1;NEURONORMA;2. Digit Span Forward (neuronorma);A
+2;NEURONORMA;3. Digit Span Backward (neuronorma);B
+3;NEURONORMA;4. Trail Making Test Part A (TMT A) (neuronorma);C
+4;NEURONORMA;5. Trail Making Test Part B (TMT B) (neuronorma);D
+5;NEURONORMA;7. Verbal fluency P (neuronorma);E
+6;NEURONORMA;8. Verbal fluency animales (neuronorma);F
+7;NEURONORMA;18. Figura Compleja de Rey-Osterrieth Memoria (neuronorma);G
+8;NEURONORMA;19. Figura compleja de Rey-Osterrieth Copia (neuronorma);H
+9;NEURONORMA;24. Boston Naming Test (BNT) (neuronorma);I
+10;TAVEC;12. Test de Aprendizaje Verbal España Complutense (TAVEC) V3;A
+11;TAVEC;13. Test de Aprendizaje Verbal España Complutense (TAVEC) V8;B
+12;TAVEC;14. Test de Aprendizaje Verbal España Complutense (TAVEC) V9;C
+13;TAVEC;15. Test de Aprendizaje Verbal España Complutense (TAVEC) V10;D
+14;TAVEC;16. Test de Aprendizaje Verbal España Complutense (TAVEC) V11;E
+15;TAVEC;17. Test de Aprendizaje Verbal España Complutense (TAVEC) V25;F
+16;TBA;20. Test de Barcelona Abreviado (TBA). Praxias gestuales a la orden D;A
+17;TBA;21. Test de Barcelona Abreviado (TBA). Praxias gestuales bimanuales;B
+18;TBA;26. Test de Barcelona Abreviado (TBA). Comprensión de órdenes;C
+19;PUNTOS_DE_CORTE;9. Torre de Hanoi 3 piezas;9
+20;PUNTOS_DE_CORTE;10. Torre de Hanoi 4 piezas;10
+21;PUNTOS_DE_CORTE;11. Frontal Bahaviour Inventory (FBI);11
+22;PUNTOS_DE_CORTE;22. Test del Reloj. Orden;22
+23;PUNTOS_DE_CORTE;23. Test del Reloj. Copia;23
+24;PUNTOS_DE_CORTE;25. Boston Naming Test Abreviado (BNT Abreviado);25
+25;PUNTOS_DE_CORTE;27. Test de Depresión de Yesavaje (GDS);27
+26;MMSE;28. Prueba MMSE;28
+27;MMSE;29. Prueba MMSE;29
+28;FAB;30. Prueba FAB;30
+29;FAB;31. Prueba FAB;31
+

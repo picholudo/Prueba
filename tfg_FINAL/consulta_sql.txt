@@ -1,0 +1,47 @@
+SELECT sexo, estudios, edad,Digit_Span_Forward,Digit_Span_Backward,
+TMT_A,TMT_B,Verbal_fluency_P,Verbal_fluency_animales,Rey_Osterrieth_Memoria,
+Rey_Osterrieth_Copia,BNT,V3,V8,V9,V10,V11,V25,TBA_orden_D,TBA_bimanuales,
+TBA_comprensión,Hanoi_tres_piezas,Hanoi_cuatro_piezas,FBI,
+Reloj_Orden,Reloj_Copia,BNT_Abreviado,
+GDS,MMSE,MMSE_2,FAB,FAB_2 FROM paciente P INNER JOIN (SELECT fecha_evaluacion, paciente_id, informe_id,Digit_Span_Forward,Digit_Span_Backward,
+TMT_A,TMT_B,Verbal_fluency_P,Verbal_fluency_animales,Rey_Osterrieth_Memoria,
+Rey_Osterrieth_Copia,BNT,V3,V8,V9,V10,V11,V25,TBA_orden_D,TBA_bimanuales,
+TBA_comprensión,Hanoi_tres_piezas,Hanoi_cuatro_piezas,FBI,
+Reloj_Orden,Reloj_Copia,BNT_Abreviado,
+GDS,MMSE,MMSE_2,FAB,FAB_2  FROM informe T
+INNER JOIN (SELECT
+    informe_id,id,
+    MAX(CASE WHEN prueba_id = 1 THEN pd ELSE "" END) AS Digit_Span_Forward,
+	 MAX(CASE WHEN prueba_id = 2 THEN pd ELSE "" END) AS Digit_Span_Backward,
+    MAX(CASE WHEN prueba_id = 3 THEN pd ELSE "" END) AS TMT_A,
+	 MAX(CASE WHEN prueba_id = 4 THEN pd ELSE "" END) AS TMT_B,
+    MAX(CASE WHEN prueba_id = 5 THEN pd ELSE "" END) AS Verbal_fluency_P,
+	 MAX(CASE WHEN prueba_id = 6 THEN pd ELSE "" END) AS Verbal_fluency_animales,
+    MAX(CASE WHEN prueba_id = 7 THEN pd ELSE "" END) AS Rey_Osterrieth_Memoria,
+	 MAX(CASE WHEN prueba_id = 8 THEN pd ELSE "" END) AS Rey_Osterrieth_Copia,
+    MAX(CASE WHEN prueba_id = 9 THEN pd ELSE "" END) AS BNT,
+	 MAX(CASE WHEN prueba_id = 10 THEN pd ELSE "" END) AS V3,
+    MAX(CASE WHEN prueba_id = 11 THEN pd ELSE "" END) AS V8,
+	 MAX(CASE WHEN prueba_id = 12 THEN pd ELSE "" END) AS V9,
+    MAX(CASE WHEN prueba_id = 13 THEN pd ELSE "" END) AS V10,
+	 MAX(CASE WHEN prueba_id = 14 THEN pd ELSE "" END) AS V11,
+    MAX(CASE WHEN prueba_id = 15 THEN pd ELSE "" END) AS V25,
+	 MAX(CASE WHEN prueba_id = 16 THEN pd ELSE "" END) AS TBA_orden_D,
+    MAX(CASE WHEN prueba_id = 17 THEN pd ELSE "" END) AS TBA_bimanuales, 
+	 MAX(CASE WHEN prueba_id = 18 THEN pd ELSE "" END) AS TBA_comprensión,
+    MAX(CASE WHEN prueba_id = 19 THEN pd ELSE "" END) AS Hanoi_tres_piezas,
+	 MAX(CASE WHEN prueba_id = 20 THEN pd ELSE "" END) AS Hanoi_cuatro_piezas,
+    MAX(CASE WHEN prueba_id = 21 THEN pd ELSE "" END) AS FBI,
+	 MAX(CASE WHEN prueba_id = 22 THEN pd ELSE "" END) AS Reloj_Orden,
+    MAX(CASE WHEN prueba_id = 23 THEN pd ELSE "" END) AS Reloj_Copia,
+	 MAX(CASE WHEN prueba_id = 24 THEN pd ELSE "" END) AS BNT_Abreviado,
+    MAX(CASE WHEN prueba_id = 25 THEN pd ELSE "" END) AS GDS,
+	 MAX(CASE WHEN prueba_id = 26 THEN pd ELSE "" END) AS MMSE,
+    MAX(CASE WHEN prueba_id = 27 THEN pd ELSE "" END) AS MMSE_2,
+	 MAX(CASE WHEN prueba_id = 28 THEN pd ELSE "" END) AS FAB,
+    MAX(CASE WHEN prueba_id = 29 THEN pd ELSE "" END) AS FAB_2 
+FROM
+	resultado_prueba
+	GROUP BY informe_id) A ON A.informe_id = T.id) D ON D.paciente_id = P.id
+
+	

@@ -1,0 +1,25 @@
+{
+  "App": {
+    "resultadoPrueba": {
+      "home": {
+        "title": "Resultado Pruebas",
+        "createLabel": "Create a new Resultado Prueba",
+        "createOrEditLabel": "Create or edit a Resultado Prueba",
+        "notFound": "No Resultado Pruebas found"
+      },
+      "created": "A new Resultado Prueba is created with identifier {{ param }}",
+      "updated": "A Resultado Prueba is updated with identifier {{ param }}",
+      "deleted": "A Resultado Prueba is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Resultado Prueba {{ id }}?"
+      },
+      "detail": {
+        "title": "Resultado Prueba"
+      },
+      "pd": "PD",
+      "pz": "PZ (Self-calculated)",
+      "prueba": "Prueba",
+      "informe": "Informe"
+    }
+  }
+}

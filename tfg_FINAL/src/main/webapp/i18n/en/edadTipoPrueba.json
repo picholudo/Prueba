@@ -1,0 +1,25 @@
+{
+  "App": {
+    "edadTipoPrueba": {
+      "home": {
+        "title": "Edad Tipo Pruebas",
+        "createLabel": "Create a new Edad Tipo Prueba",
+        "createOrEditLabel": "Create or edit a Edad Tipo Prueba",
+        "notFound": "No Edad Tipo Pruebas found"
+      },
+      "created": "A new Edad Tipo Prueba is created with identifier {{ param }}",
+      "updated": "A Edad Tipo Prueba is updated with identifier {{ param }}",
+      "deleted": "A Edad Tipo Prueba is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Edad Tipo Prueba {{ id }}?"
+      },
+      "detail": {
+        "title": "Edad Tipo Prueba"
+      },
+      "codigo": "Codigo",
+      "edadMinima": "Edad Minima",
+      "edadMaxima": "Edad Maxima",
+      "tipoPrueba": "Tipo Prueba"
+    }
+  }
+}

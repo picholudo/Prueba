@@ -1,0 +1,39 @@
+@relation csv_result-PacientesArff_Bayes-weka.filters.supervised.attribute.AddClassification-classification-remove-old-class-Wweka.classifiers.bayes.NaiveBayes
+
+@attribute sexo {Hombre,Mujer}
+@attribute estudios {ILETRADO,'LEER Y ESCRIBIR',PRIMARIOS,SECUNDARIOS,SUPERIORES}
+@attribute edad numeric
+@attribute 2.digit_span_forward_(neuronorma) numeric
+@attribute 3.digit_span_backward_(neuronorma) numeric
+@attribute 4.trail_making_test_part_a_(tmt) numeric
+@attribute 5._trail_making_test_part_b_(tmt) numeric
+@attribute 7._verbal_fluency_p_(neuronorma) numeric
+@attribute 8.verbal_fluency_animales_(neuronorma) numeric
+@attribute 9.torredehanoi3piezas numeric
+@attribute 10.torredehanoi4piezas numeric
+@attribute 11.frontalbahaviourinventory(fbi) numeric
+@attribute 12.testdeaprendizajeverbalespa�acomplutense(tavec)v3 numeric
+@attribute 13.testdeaprendizajeverbalespa�acomplutense(tavec)v8 numeric
+@attribute 14.testdeaprendizajeverbalespa�acomplutense(tavec)v9 numeric
+@attribute 15.testdeaprendizajeverbalespa�acomplutense(tavec)v10 numeric
+@attribute 16.testdeaprendizajeverbalespa�acomplutense(tavec)v11 numeric
+@attribute 17.testdeaprendizajeverbalespa�acomplutense(tavec)v25 numeric
+@attribute 18.figuracomplejaderey-osterriethmemoria(neuronorma) numeric
+@attribute 19.figuracomplejaderey-osterriethcopia(neuronorma) numeric
+@attribute 20.testdebarcelonaabreviado(tba)praxiasgestualesalaordend numeric
+@attribute 21.testdebarcelonaabreviado(tba).praxiasgestualesbimanuales numeric
+@attribute 22test numeric
+@attribute 23.testdelrelojcopia numeric
+@attribute 24.bostonnamingtest(bnt)(neuronorma) numeric
+@attribute 25.bostonnamingtestabreviado(bntabreviado) numeric
+@attribute 26.testdebarcelonaabreviad(tba)comprensi�nde�rdenes numeric
+@attribute 27.testdedepresi�ndeyesavaje(gds) numeric
+@attribute 28.mmse numeric
+@attribute 29.frontal_assemment_battery_(fab) numeric
+@attribute classification {ALZHEIMER,DEPRESION,DETERIORO_COGNITIVO_LEVE_CON_DEPRESION,DETERIORO_COGNITIVO_LEVE_SIN_DEPRESION}
+
+@data
+Hombre,ILETRADO,87,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,15,?,?,?,?,?,?,?,?,ALZHEIMER
+Hombre,ILETRADO,67,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,15,?,?,15,?,?,?,?,?,?,13,?,ALZHEIMER
+Hombre,ILETRADO,67,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,19,?,?,?,?,?,?,?,?,?,?,?,DETERIORO_COGNITIVO_LEVE_SIN_DEPRESION
+Hombre,ILETRADO,67,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,15,?,?,15,?,?,?,?,?,?,13,?,ALZHEIMER

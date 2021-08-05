@@ -1,0 +1,25 @@
+{
+  "App": {
+    "estadisticaMMSE": {
+      "home": {
+        "title": "Estadistica MMSES",
+        "createLabel": "Crear nuevo Estadistica MMSE",
+        "createOrEditLabel": "Crear o editar Estadistica MMSE",
+        "notFound": "Ningún Estadistica MMSES encontrado"
+      },
+      "created": "Un nuevo Estadistica MMSE ha sido creado con el identificador {{ param }}",
+      "updated": "Un Estadistica MMSE ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Estadistica MMSE ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Estadistica MMSE {{ id }}?"
+      },
+      "detail": {
+        "title": "Estadistica MMSE"
+      },
+      "media": "Media",
+      "desviacionTipica": "Desviacion Tipica",
+      "codigoEstudio": "Codigo Estudio",
+      "edadTipoPrueba": "Edad Tipo Prueba"
+    }
+  }
+}

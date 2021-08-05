@@ -1,0 +1,25 @@
+{
+  "App": {
+    "estadisticaFAB": {
+      "home": {
+        "title": "Estadistica FABS",
+        "createLabel": "Create a new Estadistica FAB",
+        "createOrEditLabel": "Create or edit a Estadistica FAB",
+        "notFound": "No Estadistica FABS found"
+      },
+      "created": "A new Estadistica FAB is created with identifier {{ param }}",
+      "updated": "A Estadistica FAB is updated with identifier {{ param }}",
+      "deleted": "A Estadistica FAB is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Estadistica FAB {{ id }}?"
+      },
+      "detail": {
+        "title": "Estadistica FAB"
+      },
+      "media": "Media",
+      "desviacionTipica": "Desviacion Tipica",
+      "codigoEstudio": "Codigo Estudio",
+      "edadTipoPrueba": "Edad Tipo Prueba"
+    }
+  }
+}

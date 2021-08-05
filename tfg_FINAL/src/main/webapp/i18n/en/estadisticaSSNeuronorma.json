@@ -1,0 +1,25 @@
+{
+  "App": {
+    "estadisticaSSNeuronorma": {
+      "home": {
+        "title": "Estadistica SS Neuronormas",
+        "createLabel": "Create a new Estadistica SS Neuronorma",
+        "createOrEditLabel": "Create or edit a Estadistica SS Neuronorma",
+        "notFound": "No Estadistica SS Neuronormas found"
+      },
+      "created": "A new Estadistica SS Neuronorma is created with identifier {{ param }}",
+      "updated": "A Estadistica SS Neuronorma is updated with identifier {{ param }}",
+      "deleted": "A Estadistica SS Neuronorma is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Estadistica SS Neuronorma {{ id }}?"
+      },
+      "detail": {
+        "title": "Estadistica SS Neuronorma"
+      },
+      "pd": "Pd",
+      "scaledScore": "Scaled Score",
+      "prueba": "Prueba",
+      "edadTipoPrueba": "Edad Tipo Prueba"
+    }
+  }
+}

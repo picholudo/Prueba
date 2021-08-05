@@ -1,0 +1,82 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="informe">
+            <h2><span jhiTranslate="App.informe.detail.title">Informe</span> {{informe.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+
+                <dt><span jhiTranslate="App.informe.paciente">Paciente</span></dt>
+                <dd>
+                    <div *ngIf="informe.pacienteId">
+                        <a [routerLink]="['/paciente', informe.pacienteId, 'view']">{{informe.pacienteNombre}}</a>
+                    </div>
+                </dd>
+				<dt><span jhiTranslate="App.informe.user">User</span></dt>
+                <dd>
+                    {{informe.userEmail}}
+                </dd>       
+                <dt><span jhiTranslate="App.informe.sospechaClinica">Sospecha Clinica</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'App.SospechaClinica.' + informe.sospechaClinica}}">{{informe.sospechaClinica}}</span>
+                </dd>
+                <dt><span jhiTranslate="App.informe.sospechaClinicaSugerida">Sospecha Clinica Sugerida</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'App.SospechaClinicaSugerida.' + informe.sospechaClinicaSugerida}}">{{informe.sospechaClinicaSugerida}}</span>
+                </dd>
+                <dt><span jhiTranslate="App.informe.fechaEvaluacion">Fecha Evaluacion</span></dt>
+                <dd>
+                    <span>{{informe.fechaEvaluacion}}</span>
+                </dd>
+                <dt><span jhiTranslate="App.informe.motivoConsulta">Motivo Consulta</span></dt>
+                <dd>
+                    <span>{{informe.motivoConsulta}}</span>
+                </dd>
+                <dt><span jhiTranslate="App.informe.orientacion">Orientacion</span></dt>
+                <dd>
+                    <span>{{informe.orientacion}}</span>
+                </dd>
+                <dt><span jhiTranslate="App.informe.memoria">Memoria</span></dt>
+                <dd>
+                    <span>{{informe.memoria}}</span>
+                </dd>
+                <dt><span jhiTranslate="App.informe.praxias">Praxias</span></dt>
+                <dd>
+                    <span>{{informe.praxias}}</span>
+                </dd>
+                <dt><span jhiTranslate="App.informe.lenguaje">Lenguaje</span></dt>
+                <dd>
+                    <span>{{informe.lenguaje}}</span>
+                </dd>
+                <dt><span jhiTranslate="App.informe.funcionesEjecutivas">Funciones Ejecutivas</span></dt>
+                <dd>
+                    <span>{{informe.funcionesEjecutivas}}</span>
+                </dd>
+                <dt><span jhiTranslate="App.informe.conducta">Conducta</span></dt>
+                <dd>
+                    <span>{{informe.conducta}}</span>
+                </dd>
+                <dt><span jhiTranslate="App.informe.actividadesDiarias">Actividades Diarias</span></dt>
+                <dd>
+                    <span>{{informe.actividadesDiarias}}</span>
+                </dd>
+                <dt><span jhiTranslate="App.informe.resumen">Resumen</span></dt>
+                <dd>
+                    <span>{{informe.resumen}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/informe', informe.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

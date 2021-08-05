@@ -1,0 +1,196 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-informe-heading" jhiTranslate="App.informe.home.createOrEditLabel">Create or edit a Informe</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <jhi-alert></jhi-alert>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="App.informe.paciente" for="field_paciente">Paciente</label>
+                    <select class="form-control" id="field_paciente" name="paciente" formControlName="pacienteId">
+                        <option *ngIf="!editForm.get('pacienteId')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="pacienteOption.id" *ngFor="let pacienteOption of pacientes; trackBy: trackById">{{pacienteOption.nombre}}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('pacienteId')!.invalid && (editForm.get('pacienteId')!.dirty || editForm.get('pacienteId')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('pacienteId')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+                
+       			<div class="form-group">
+                    <label class="form-control-label" jhiTranslate="App.informe.user" for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" formControlName="userId" disabled >
+                        <option *ngIf="!editForm.get('userId')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="userOption.id" *ngFor="let userOption of users; trackBy: trackById">{{userOption.email}}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('userId')!.invalid && (editForm.get('userId')!.dirty || editForm.get('userId')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('userId')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>                
+                
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="App.informe.fechaEvaluacion" for="field_fechaEvaluacion">Fecha Evaluacion</label>
+                    <div class="input-group">
+                        <input id="field_fechaEvaluacion" type="text" class="form-control" name="fechaEvaluacion" ngbDatepicker  #fechaEvaluacionDp="ngbDatepicker" formControlName="fechaEvaluacion"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="fechaEvaluacionDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('fechaEvaluacion')!.invalid && (editForm.get('fechaEvaluacion')!.dirty || editForm.get('fechaEvaluacion')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fechaEvaluacion')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                
+                
+                <div class="form-group" [hidden]="!editForm.get('id')!.value" id="">
+				<!-- ResultadoPruebas -->
+				    <br/>
+				    <div class="alert alert-warning" *ngIf="resultadoPruebas?.length === 0">
+				        <span jhiTranslate="App.resultadoPrueba.home.notFound">No resultadoPruebas found</span>
+				    </div>
+				    <div class="table-responsive" *ngIf="resultadoPruebas?.length > 0">
+				        <table class="table table-striped" aria-describedby="page-heading">
+				            <thead>
+				            <tr>
+				            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+							<th scope="col" ><span>Tipo Prueba</span></th>
+							<th scope="col" ><span jhiTranslate="App.resultadoPrueba.prueba">Prueba</span></th>
+				            <th scope="col" ><span jhiTranslate="App.resultadoPrueba.pd">Pd</span></th>
+				            <th scope="col" ><span jhiTranslate="App.resultadoPrueba.pz">Pz</span></th>
+			
+				            </tr>
+				            </thead>
+				            <tbody>
+				            <tr *ngFor="let resultadoPrueba of resultadoPruebas ;trackBy: trackId">
+				                <td><a [routerLink]="['/resultado-prueba', resultadoPrueba.id, 'view' ]">{{resultadoPrueba.id}}</a></td>
+				                <td>{{resultadoPrueba.tipoPrueba}}</td>
+				                <td>
+				                    <div *ngIf="resultadoPrueba.pruebaId">
+				                        <a [routerLink]="['/prueba', resultadoPrueba.pruebaId , 'view' ]" >{{resultadoPrueba.pruebaNombre}}</a>
+				                    </div>
+				                </td>
+				                <td>{{resultadoPrueba.pd}}</td>
+				                <td> 
+				                	<span [hidden]="resultadoPrueba.tipoPrueba === 'PUNTOS_DE_CORTE'">{{resultadoPrueba.pz}}</span> 
+				                	<span [hidden]="resultadoPrueba.tipoPrueba !== 'PUNTOS_DE_CORTE'">
+					                	<span *ngIf="resultadoPrueba.exitoPuntoCorte">Superada</span>
+					                	<span *ngIf="!resultadoPrueba.exitoPuntoCorte">No Superada</span>
+				                	</span>
+				                </td>
+				            </tr>
+				            </tbody>
+				        </table>
+				    </div>
+				    <br/>
+			        <a class="dropdown-item" [routerLink]="['/resultado-prueba/new']" [queryParams]="{informeId: editForm.get('id')!.value}" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+			            <fa-icon icon="plus" fixedWidth="true"></fa-icon>
+			            <span jhiTranslate="App.resultadoPrueba.home.createLabel">Create a new Resultado Prueba</span>
+			        </a>
+			        <br/>
+			        <br/>
+                    <div>
+                        <button type="button" id="text" value="Sugerir Sospecha" class="btn btn-primary" jhiTranslate="entity.action.suggest" style="margin-right: 0; float: right;" (click)="getSuggestedDiagnosis()"></button>
+                    </div>
+				    <!-- End of ResultadoPruebas -->
+                </div>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label class="form-control-label" jhiTranslate="App.informe.sospechaClinicaSugerida" for="field_sospechaClinicaSugerida">Sospecha Clinica Sugerida</label>
+                    <input type="text" class="form-control" name="sospechaClinicaSugerida" id="field_sospechaClinicaSugerida" value="{{ sospechaClinicaSugerida }}"
+                           formControlName="sospechaClinicaSugerida"/>
+                </div>
+           
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label class="form-control-label" jhiTranslate="App.informe.sospechaClinica" for="field_sospechaClinica">Sospecha Clinica</label>
+                    <select class="form-control" name="sospechaClinica" formControlName="sospechaClinica" id="field_sospechaClinica">
+                        <option value="DEPRESION">{{'App.SospechaClinica.DEPRESION' | translate}}</option>
+                        <option value="DETERIORO_COGNITIVO_LEVE_CON_DEPRESION">{{'App.SospechaClinica.DETERIORO_COGNITIVO_LEVE_CON_DEPRESION' | translate}}</option>
+                        <option value="DETERIORO_COGNITIVO_LEVE_SIN_DEPRESION">{{'App.SospechaClinica.DETERIORO_COGNITIVO_LEVE_SIN_DEPRESION' | translate}}</option>
+                        <option value="ALZHEIMER">{{'App.SospechaClinica.ALZHEIMER' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label class="form-control-label" jhiTranslate="App.informe.motivoConsulta" for="field_motivoConsulta">Motivo Consulta</label>
+                    <input type="text" class="form-control" name="motivoConsulta" id="field_motivoConsulta"
+                           formControlName="motivoConsulta"/>
+                </div>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label class="form-control-label" jhiTranslate="App.informe.orientacion" for="field_orientacion">Orientacion</label>
+                    <input type="text" class="form-control" name="orientacion" id="field_orientacion"
+                           formControlName="orientacion"/>
+                </div>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label class="form-control-label" jhiTranslate="App.informe.memoria" for="field_memoria">Memoria</label>
+                    <input type="text" class="form-control" name="memoria" id="field_memoria"
+                           formControlName="memoria"/>
+                </div>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label class="form-control-label" jhiTranslate="App.informe.praxias" for="field_praxias">Praxias</label>
+                    <input type="text" class="form-control" name="praxias" id="field_praxias"
+                           formControlName="praxias"/>
+                </div>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label class="form-control-label" jhiTranslate="App.informe.lenguaje" for="field_lenguaje">Lenguaje</label>
+                    <input type="text" class="form-control" name="lenguaje" id="field_lenguaje"
+                           formControlName="lenguaje"/>
+                </div>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label class="form-control-label" jhiTranslate="App.informe.funcionesEjecutivas" for="field_funcionesEjecutivas">Funciones Ejecutivas</label>
+                    <input type="text" class="form-control" name="funcionesEjecutivas" id="field_funcionesEjecutivas"
+                           formControlName="funcionesEjecutivas"/>
+                </div>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label class="form-control-label" jhiTranslate="App.informe.conducta" for="field_conducta">Conducta</label>
+                    <input type="text" class="form-control" name="conducta" id="field_conducta"
+                           formControlName="conducta"/>
+                </div>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label class="form-control-label" jhiTranslate="App.informe.actividadesDiarias" for="field_actividadesDiarias">Actividades Diarias</label>
+                    <input type="text" class="form-control" name="actividadesDiarias" id="field_actividadesDiarias"
+                           formControlName="actividadesDiarias"/>
+                </div>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label class="form-control-label" jhiTranslate="App.informe.resumen" for="field_resumen">Resumen</label>
+                    <input type="text" class="form-control" name="resumen" id="field_resumen"
+                           formControlName="resumen"/>
+                </div>
+<!--                 <div class="form-group"> -->
+<!--                     <label class="form-control-label" jhiTranslate="App.informe.paciente" for="field_paciente">Paciente</label> -->
+<!--                     <select class="form-control" id="field_paciente" name="paciente" formControlName="pacienteId"> -->
+<!--                         <option *ngIf="!editForm.get('pacienteId')!.value" [ngValue]="null" selected></option> -->
+<!--                         <option [ngValue]="pacienteOption.id" *ngFor="let pacienteOption of pacientes; trackBy: trackById">{{pacienteOption.nombre}}</option> -->
+<!--                     </select> -->
+<!--                 </div> -->
+<!--                 <div *ngIf="editForm.get('pacienteId')!.invalid && (editForm.get('pacienteId')!.dirty || editForm.get('pacienteId')!.touched)"> -->
+<!--                     <small class="form-text text-danger" -->
+<!--                            *ngIf="editForm.get('pacienteId')?.errors?.required" jhiTranslate="entity.validation.required"> -->
+<!--                         This field is required. -->
+<!--                     </small> -->
+<!--                 </div> -->
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+        <div>
+    
+        </div>
+    </div>
+</div>

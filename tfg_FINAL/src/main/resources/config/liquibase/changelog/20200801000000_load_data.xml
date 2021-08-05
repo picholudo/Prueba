@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+        <property name="autoIncrement" value="true"/>
+
+
+    <changeSet id="20200801000000-edad_tipo_prueba" author="jhipster">
+ 		<loadData
+                  file="config/liquibase/data/edad_tipo_prueba.csv"
+                  separator=";"
+                  tableName="edad_tipo_prueba">
+            <column name="id" type="numeric"/>
+            <column name="codigo" type="string"/>
+            <column name="edad_minima" type="numeric"/>
+            <column name="tipo_prueba" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
+        </loadData>    
+    </changeSet>
+    
+    <changeSet id="20200801000000-codigo_estudio" author="jhipster">
+        <loadData
+                  file="config/liquibase/data/codigo_estudio.csv"
+                  separator=";"
+                  tableName="codigo_estudio">
+            <column name="id" type="numeric"/>
+            <column name="nivel_estudios" type="string"/>
+            <column name="codigo" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
+        </loadData>
+    </changeSet>    
+    
+	<changeSet id="20200801000000-prueba" author="jhipster">
+        <loadData
+                  file="config/liquibase/data/prueba.csv"
+                  separator=";"
+                  tableName="prueba">
+            <column name="id" type="numeric"/>
+            <column name="tipo_prueba" type="string"/>
+            <column name="nombre" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
+        </loadData>
+    </changeSet> 
+    
+    
+    <changeSet id="20200720114512-estadistica_ajuste_neuronorma" author="jhipster">
+        <loadData
+                  file="config/liquibase/data/estadistica_ajuste_neuronorma.csv"
+                  separator=";"
+                  tableName="estadistica_ajuste_neuronorma">
+            <column name="id" type="numeric"/>
+            <column name="scaled_score" type="numeric"/>
+            <column name="ajuste_estudios" type="numeric"/>
+            <column name="prueba_id" type="numeric"/>
+            <column name="codigo_estudio_id" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
+        </loadData>
+    </changeSet>
+    
+    <changeSet id="20200716113904-estadistica_mmse" author="jhipster">
+        <loadData
+                  file="config/liquibase/data/estadistica_mmse.csv"
+                  separator=";"
+                  tableName="estadistica_mmse">
+            <column name="id" type="numeric"/>
+            <column name="media" type="numeric"/>
+            <column name="desviacion_tipica" type="numeric"/>
+            <column name="codigo_estudio_id" type="numeric"/>
+            <column name="edad_tipo_prueba_id" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
+        </loadData>
+    </changeSet>    
+    
+    <changeSet id="20200721103032-estadistica_punto_corte" author="jhipster">
+        <loadData
+                  file="config/liquibase/data/estadistica_punto_corte.csv"
+                  separator=";"
+                  tableName="estadistica_punto_corte">
+            <column name="id" type="numeric"/>
+            <column name="punto_corte" type="numeric"/>
+            <column name="prueba_id" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
+        </loadData>
+    </changeSet>
+    
+    <changeSet id="20200720114513-estadistica_pz_neuronorma" author="jhipster">
+        <loadData
+                  file="config/liquibase/data/estadistica_pz_neuronorma.csv"
+                  separator=";"
+                  tableName="estadistica_pz_neuronorma">
+            <column name="id" type="numeric"/>
+            <column name="ajuste_estudios" type="numeric"/>
+            <column name="pz" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
+        </loadData>
+    </changeSet>        
+    
+    <changeSet id="20200720114511-estadistica_ss_neuronorma" author="jhipster">
+        <loadData
+                  file="config/liquibase/data/estadistica_ss_neuronorma.csv"
+                  separator=";"
+                  tableName="estadistica_ss_neuronorma">
+            <column name="id" type="numeric"/>
+            <column name="pd" type="numeric"/>
+            <column name="scaled_score" type="numeric"/>
+            <column name="prueba_id" type="numeric"/>
+            <column name="edad_tipo_prueba_id" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
+        </loadData>
+    </changeSet>
+    
+    <changeSet id="20200720114515-estadistica_tavec" author="jhipster">
+        <loadData
+                  file="config/liquibase/data/estadistica_tavec.csv"
+                  separator=";"
+                  tableName="estadistica_tavec">
+            <column name="id" type="numeric"/>
+            <column name="media" type="numeric"/>
+            <column name="desviacion_tipica" type="numeric"/>
+            <column name="prueba_id" type="numeric"/>
+            <column name="edad_tipo_prueba_id" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
+        </loadData>
+    </changeSet>   
+    
+    <changeSet id="20200720114516-estadistica_tba" author="jhipster">
+        <loadData
+                  file="config/liquibase/data/estadistica_tba.csv"
+                  separator=";"
+                  tableName="estadistica_tba">
+            <column name="id" type="numeric"/>
+            <column name="media" type="numeric"/>
+            <column name="desviacion_tipica" type="numeric"/>
+            <column name="prueba_id" type="numeric"/>
+            <column name="codigo_estudio_id" type="numeric"/>
+            <column name="edad_tipo_prueba_id" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
+        </loadData>
+    </changeSet>     
+        
+</databaseChangeLog>

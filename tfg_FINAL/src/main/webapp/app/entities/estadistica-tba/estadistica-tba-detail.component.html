@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="estadisticaTBA">
+            <h2><span jhiTranslate="App.estadisticaTBA.detail.title">Estadistica TBA</span> {{estadisticaTBA.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="App.estadisticaTBA.prueba">Prueba</span></dt>
+                <dd>
+                    <div *ngIf="estadisticaTBA.pruebaId">
+                        <a [routerLink]="['/prueba', estadisticaTBA.pruebaId, 'view']">{{estadisticaTBA.pruebaNombre}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="App.estadisticaTBA.codigoEstudio">Codigo Estudio</span></dt>
+                <dd>
+                    <div *ngIf="estadisticaTBA.codigoEstudioId">
+                        <a [routerLink]="['/codigo-estudio', estadisticaTBA.codigoEstudioId, 'view']">{{estadisticaTBA.codigoEstudioNivelEstudios}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="App.estadisticaTBA.edadTipoPrueba">Edad Tipo Prueba</span></dt>
+                <dd>
+                    <div *ngIf="estadisticaTBA.edadTipoPruebaId">
+                        <a [routerLink]="['/edad-tipo-prueba', estadisticaTBA.edadTipoPruebaId, 'view']">{{estadisticaTBA.edadTipoPruebaTipoPrueba}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="App.estadisticaTBA.media">Media</span></dt>
+                <dd>
+                    <span>{{estadisticaTBA.media}}</span>
+                </dd>
+                <dt><span jhiTranslate="App.estadisticaTBA.desviacionTipica">Desviacion Tipica</span></dt>
+                <dd>
+                    <span>{{estadisticaTBA.desviacionTipica}}</span>
+                </dd>                
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/estadistica-tba', estadisticaTBA.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
